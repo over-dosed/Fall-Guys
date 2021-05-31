@@ -50,15 +50,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Input\MyInputActions.cs" />
+    <Compile Include="Assets\Scripts\Projectile\Projectile.cs" />
     <Compile Include="Assets\Simple Character Pack\Demo\Script\CharacterPreviewController.cs" />
     <Compile Include="Assets\Scripts\Miscs\Viewport.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Simple Character Pack\Demo\Script\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Input\PlayInPut.cs" />
     <Compile Include="Assets\Scripts\System Modules\Singleton.cs" />
-    <Compile Include="Assets\Scripts\Miscs\BackgroundScroller.cs" />
-    <Compile Include="Assets\Scripts\Projectile\Projectile.cs" />
     <Compile Include="Assets\Scripts\Projectile\PlayerProjectile.cs" />
+    <Compile Include="Assets\Scripts\Miscs\BackgroundScroller.cs" />
     <None Include="Assets\Simple Character Pack\Shader\ToonLitOutline.shader" />
     <None Include="Assets\Simple Character Pack\Shader\ToonLit.shader" />
     <None Include="Assets\Simple Character Pack\Shader\ToonBasic.shader" />
@@ -633,52 +633,52 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.6f1c1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>F:/Testttt/Test/New Unity Project/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+      <HintPath>F:/Testttt/Fall-Guys/New Unity Project/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
