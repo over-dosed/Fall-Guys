@@ -56,7 +56,6 @@
      <Compile Include="Assets\Scripts\Input\PlayInPut.cs" />
      <Compile Include="Assets\Scripts\System Modules\Singleton.cs" />
      <Compile Include="Assets\Scripts\Projectile\PlayerProjectile.cs" />
-     <Compile Include="Assets\Settings\Input\MyInputActions.cs" />
      <Compile Include="Assets\Scripts\Miscs\BackgroundScroller.cs" />
      <None Include="Assets\Simple Character Pack\Shader\ToonLitOutline.shader" />
      <None Include="Assets\Simple Character Pack\Shader\ToonLit.shader" />
