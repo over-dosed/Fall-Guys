@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Projectile\PlayerProjectile.cs" />
     <Compile Include="Assets\Scripts\Miscs\LightFade.cs" />
     <Compile Include="Assets\Scripts\Miscs\BackgroundScroller.cs" />
+    <Compile Include="Assets\Scripts\Catch_Tail Track\Track.cs" />
     <None Include="Assets\Resources\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
     <None Include="Assets\Simple Character Pack\Shader\ToonLitOutline.shader" />
     <None Include="Assets\Simple Character Pack\Shader\ToonLit.shader" />

@@ -783,6 +783,7 @@ GameObject:
   - component: {fileID: 1570457039}
   - component: {fileID: 1570457038}
   - component: {fileID: 1570457037}
+  - component: {fileID: 1570457041}
   m_Layer: 0
   m_Name: track
   m_TagString: Untagged
@@ -873,12 +874,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570457036}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 5.7, y: 2.99, z: 2.69}
-  m_LocalScale: {x: 4.209532, y: 3.3689728, z: 4.463552}
+  m_LocalPosition: {x: -6.28, y: 2.99, z: 3.07}
+  m_LocalScale: {x: 3.6654365, y: 2.9335222, z: 3.8866236}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1570457041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570457036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82f77277251d0f4f9a4c4c00b29a8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3.5
+  moveDirection: {x: -1, y: 0}
+  onceMoveTime: 3.5
 --- !u!1 &1613997139
 GameObject:
   m_ObjectHideFlags: 0
