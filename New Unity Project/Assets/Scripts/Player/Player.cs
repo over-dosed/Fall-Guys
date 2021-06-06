@@ -4,9 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     Animator  animator;
-    [SerializeField] PlayInPut input;
+    [SerializeField] PlayInPut input; 
 
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float accelerationTime = 3f;
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
     {
         animator = gameObject.GetComponent<Animator>();
         
-        rigidbody.gravityScale = 0f;//重力
+        rigidbody.gravityScale = 10f;//重力
         input.EnableGameplayInput();//激活GamePlay动作表
     }
 
@@ -134,7 +135,8 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            transform.position = Viewport.Instance.PlayerMoveablePosition(transform.position,paddingX,paddingY);
+
+            // transform.position = Viewport.Instance.PlayerMoveablePosition(transform.position,paddingX,paddingY);
 
             yield return null;//在 return 时，保存当前函数的状态，下次调用时继续从当前位置处理。在此处相当于挂起直到下一帧
         }
