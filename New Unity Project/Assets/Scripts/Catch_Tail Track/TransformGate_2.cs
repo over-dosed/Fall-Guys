@@ -5,7 +5,7 @@ using UnityEngine;
 public class TransformGate_2 : MonoBehaviour
 {
 
-    [SerializeField] float teleportCountDown = 2f;
+    [SerializeField] float teleportCountDown = 5f;
 
     [SerializeField] TransformGate_3 destination;
     [SerializeField] TransformGate_1 startGate;
@@ -14,7 +14,14 @@ public class TransformGate_2 : MonoBehaviour
 
     IEnumerator TeleportCoroutine(Transform transform)
     {
-        Vector3 vector = new Vector3(destination.transform.position.x, destination.transform.position.y, transform.position.z);
+        int random = (int)Random.Range(0, 2);
+        Vector3 vector = new Vector3(0, 0, 0);
+        switch (random)
+        {
+            case 0: vector = new Vector3(destination.transform.position.x, destination.transform.position.y, transform.position.z); break;
+            case 1: vector = new Vector3(startGate.transform.position.x, startGate.transform.position.y, transform.position.z); break;
+        }
+        //Vector3 vector = new Vector3(destination.transform.position.x, destination.transform.position.y, transform.position.z);
         transform.position = vector;
         yield return null;
     }
@@ -52,7 +59,9 @@ public class TransformGate_2 : MonoBehaviour
             if (teleporTimer >= teleportCountDown) //如果倒计时结束
             {
                 StartCoroutine(TeleportCoroutine(other.transform));
-                canCheckAnother = false;
+                //canCheckAnother = false;
+                teleporTimer = 0f;
+                startGate.canCheckAnother = true;
             }
             else
             {
