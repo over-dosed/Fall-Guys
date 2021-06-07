@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
-    
     // Start is called before the first frame update
-    Animator  animator;
+    Animator animator;
     [SerializeField] PlayInPut input; 
 
     [SerializeField] float moveSpeed = 10f;
@@ -16,8 +16,6 @@ public class Player : MonoBehaviour
     [SerializeField] float paddingY = 0.2f;
     [SerializeField] float moveRotationAngle = 90f;
 
-
-
     new Rigidbody2D rigidbody;
 
     Coroutine moveCoroutine;
@@ -25,9 +23,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-
         rigidbody = GetComponent<Rigidbody2D>();
-
     }
 
     void OnEnable()
@@ -42,41 +38,42 @@ public class Player : MonoBehaviour
         input.onStopMove -= StopMove;
     }
 
-
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        
-        rigidbody.gravityScale = 10f;//重力
-        input.EnableGameplayInput();//激活GamePlay动作表
+        rigidbody.gravityScale = 0f; // 重力
+        input.EnableGameplayInput(); // 激活GamePlay动作表
+        if(!isLocalPlayer)
+        {
+            OnDisable();
+        }
     }
 
-    /* void Update()
-     {
-        transform.position = Viewport.Instance.PlayerMoveablePosition(transform.position);
-     }*///由于Update是游戏每一帧调用一次，所以尽量少用，用协程的方式调用Viewport.Instance单例
-
+    /*
+    void Update() {}
+     */
+    // 由于Update是游戏每一帧调用一次，所以尽量少用，用协程的方式调用Viewport.Instance单例
 
     // Update is called once per frame
     void Move(Vector2 moveInput)
     {
-        //Vector2 moveAmount = moveInput * moveSpeed;//移动量
+        // Vector2 moveAmount = moveInput * moveSpeed; //移动量
         // rigidbody.velocity = moveAmount;
 
         if(moveCoroutine!=null)
         {
-            StopCoroutine(moveCoroutine);//停止协程
-
+            StopCoroutine(moveCoroutine); //停止协程
         }
         animator.SetBool("Ismove", true);
 
-        Quaternion moveRocation = Quaternion.AngleAxis(moveRotationAngle*moveInput.x,Vector3.forward);
-      Quaternion TurnMoveRocation = Quaternion.AngleAxis(moveRotationAngle * moveInput.x*-2f,Vector3.down);
+        Quaternion moveRocation = Quaternion.AngleAxis(moveRotationAngle * moveInput.x, Vector3.forward);
+        Quaternion TurnMoveRocation = Quaternion.AngleAxis(moveRotationAngle * moveInput.x*-2f, Vector3.down);
 
-       // transform.rotation = TurnMoveRocation;
-        moveCoroutine = StartCoroutine(MoveCoroutine(accelerationTime, moveInput.normalized * moveSpeed,moveRocation*TurnMoveRocation));//normalized让手柄和键盘输入的二维向量保持一致
-        StartCoroutine(MovePositionLimitCoroutine());//只在这个地方启用协程
+        // transform.rotation = TurnMoveRocation;
+        moveCoroutine = StartCoroutine(MoveCoroutine(accelerationTime, moveInput.normalized * moveSpeed, moveRocation*TurnMoveRocation));//normalized让手柄和键盘输入的二维向量保持一致
+        StartCoroutine(MovePositionLimitCoroutine()); //只在这个地方启用协程
     }
+
     void StopMove()
     {
         // rigidbody.velocity = Vector2.zero;
@@ -94,9 +91,6 @@ public class Player : MonoBehaviour
         StopCoroutine(MovePositionLimitCoroutine());//只在这个地方停用协程
 
     }
-
-
-
 
     IEnumerator MoveCoroutine(float time, Vector2 moveVelocity,Quaternion moveRotation)//加速或者减速的
     {
@@ -128,8 +122,6 @@ public class Player : MonoBehaviour
             yield return null;
         }
     }*/
-
-
 
     IEnumerator MovePositionLimitCoroutine()//移位限制协程
     {
