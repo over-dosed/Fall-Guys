@@ -11,10 +11,10 @@ public class TransformGate : MonoBehaviour
     float waitingTime;
     public bool isEnabled { set; get; }
 
-    IEnumerator TeleportCoroutine(GameObject player)
+    IEnumerator TeleportCoroutine(Collider2D other)
     {
         Vector3 vector = new Vector3(targetGate.transform.position.x, targetGate.transform.position.y, transform.position.z);
-        player.transform.position = vector;
+        other.transform.position = vector;
         yield return null;
     }
 
@@ -38,7 +38,7 @@ public class TransformGate : MonoBehaviour
     }
      */
 
-    void OnTriggerEnter2D(GameObject other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (isEnabled)
         {
@@ -46,7 +46,7 @@ public class TransformGate : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(GameObject other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (isEnabled)
         {
@@ -61,7 +61,7 @@ public class TransformGate : MonoBehaviour
         }
     }
 
-    void TriggerExit2D(GameObject other)
+    void TriggerExit2D(Collider2D other)
     {
         waitingTime = 0f;
     }
