@@ -5601,7 +5601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65897a1b9ddd83429ad33322b3f7a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportCountDown: 2
+  teleportCountDown: 3
   destination: {fileID: 0}
   startGate: {fileID: 0}
 --- !u!1 &1003404036
@@ -5964,7 +5964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7859d6a3dd45cbc4ab9d528694a6b69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportCountDown: 2
+  teleportCountDown: 3
   destination: {fileID: 0}
   startGate: {fileID: 0}
 --- !u!58 &1077708120
@@ -10970,7 +10970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69aa61493922ec4ba7b8564b72e71f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportCountDown: 2
+  teleportCountDown: 3
   destination: {fileID: 0}
   startGate: {fileID: 0}
 --- !u!58 &1209876892
@@ -15878,7 +15878,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 710889372, guid: ea3d0aedf34e1e2469bc655367bc8247, type: 3}
       propertyPath: m_Mass
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 710889372, guid: ea3d0aedf34e1e2469bc655367bc8247, type: 3}
       propertyPath: m_Material
@@ -15890,7 +15890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 710889372, guid: ea3d0aedf34e1e2469bc655367bc8247, type: 3}
       propertyPath: m_GravityScale
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 915561083, guid: ea3d0aedf34e1e2469bc655367bc8247, type: 3}
       propertyPath: m_LocalPosition.y
