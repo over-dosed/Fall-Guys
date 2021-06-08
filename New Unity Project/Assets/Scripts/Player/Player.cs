@@ -41,7 +41,7 @@ public class Player : NetworkBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        rigidbody.gravityScale = 0f; // 重力
+        rigidbody.gravityScale = 5f; // 重力
         input.EnableGameplayInput(); // 激活GamePlay动作表
         if(!isLocalPlayer)
         {

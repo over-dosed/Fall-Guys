@@ -11,10 +11,10 @@ public class TransformGate : MonoBehaviour
     float waitingTime;
     public bool isEnabled { set; get; }
 
-    IEnumerator TeleportCoroutine(Collider2D other)
+    IEnumerator TeleportCoroutine(Collider2D player)
     {
-        Vector3 vector = new Vector3(targetGate.transform.position.x, targetGate.transform.position.y, transform.position.z);
-        other.transform.position = vector;
+        Vector3 vector = new Vector3(targetGate.transform.position.x, targetGate.transform.position.y, player.transform.position.z);
+        player.transform.position = vector;
         yield return null;
     }
 
