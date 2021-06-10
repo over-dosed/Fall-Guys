@@ -1,19 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 
 [CreateAssetMenu(menuName = "Player Input")]
-public class PlayInPut : ScriptableObject, MyInputActions.IGamePlayActions
-{
+public class PlayInPut : ScriptableObject, MyInputActions.IGamePlayActions {
     public event UnityAction<Vector2> onMove = delegate { };
     public event UnityAction onStopMove = delegate { };
     //public event System.Action
     MyInputActions myInputActions;//之前写的类 
-    void OnEnable()
-    {
+    void OnEnable() {
         myInputActions = new MyInputActions();
         myInputActions.GamePlay.SetCallbacks(this);
 
@@ -24,14 +20,12 @@ public class PlayInPut : ScriptableObject, MyInputActions.IGamePlayActions
         myInputActions.GamePlay.Disable();
     }
 
-    void OnDisable()
-    {
+    void OnDisable() {
         DisableAllInputs();
     }
 
 
-    public void EnableGameplayInput()
-    {
+    public void EnableGameplayInput() {
         myInputActions.GamePlay.Enable();
 
         Cursor.visible = false;
@@ -39,9 +33,8 @@ public class PlayInPut : ScriptableObject, MyInputActions.IGamePlayActions
 
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        if(context.phase ==InputActionPhase.Performed)//希望玩家按住按键持续移动
+    public void OnMove(InputAction.CallbackContext context) {
+        if (context.phase == InputActionPhase.Performed)//希望玩家按住按键持续移动
         {
             //if(onMove!=null)
             onMove.Invoke(context.ReadValue<Vector2>());
