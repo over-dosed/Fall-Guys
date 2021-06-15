@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-class LightFade : MonoBehaviour
-{
+class LightFade : MonoBehaviour {
     [SerializeField] float fadeDuration = 1f;
     [SerializeField] bool delay = false;
     [SerializeField] float delayTime = 0f;
@@ -15,22 +14,18 @@ class LightFade : MonoBehaviour
 
     WaitForSeconds waitDelayTime;
 
-    void Awake()
-    {
+    void Awake() {
         light = GetComponent<Light>();
 
         waitDelayTime = new WaitForSeconds(delayTime);
     }
 
-    void OnEnable()
-    {
+    void OnEnable() {
         StartCoroutine(nameof(LightCoroutine));
     }
 
-    IEnumerator LightCoroutine()
-    {
-        if (delay)
-        {
+    IEnumerator LightCoroutine() {
+        if (delay) {
             yield return waitDelayTime;
         }
 
@@ -38,8 +33,7 @@ class LightFade : MonoBehaviour
         light.enabled = true;
         t = 0f;
 
-        while (t < 1f)
-        {
+        while (t < 1f) {
             t += Time.deltaTime / fadeDuration;
             light.intensity = Mathf.Lerp(startIntensity, finalIntensity, t);
 
