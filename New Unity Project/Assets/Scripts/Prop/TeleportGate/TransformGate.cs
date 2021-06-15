@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TransformGate : MonoBehaviour
-{
+public class TransformGate : MonoBehaviour {
     [SerializeField] float preparedTime = 2f;
 
     [SerializeField] GameObject targetGate;
@@ -11,15 +9,13 @@ public class TransformGate : MonoBehaviour
     float waitingTime;
     public bool isEnabled { set; get; }
 
-    IEnumerator TeleportCoroutine(Collider2D player)
-    {
+    IEnumerator TeleportCoroutine(Collider2D player) {
         Vector3 vector = new Vector3(targetGate.transform.position.x, targetGate.transform.position.y, player.transform.position.z);
         player.transform.position = vector;
         yield return null;
     }
 
-    void OnEnable()
-    {
+    void OnEnable() {
         isEnabled = true;
     }
 
@@ -38,31 +34,24 @@ public class TransformGate : MonoBehaviour
     }
      */
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (isEnabled)
-        {
+    void OnTriggerEnter2D(Collider2D other) {
+        if (isEnabled) {
             waitingTime = 0f;
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (isEnabled)
-        {
+    void OnTriggerStay2D(Collider2D other) {
+        if (isEnabled) {
             if (waitingTime >= preparedTime) //如果倒计时结束
             {
                 StartCoroutine(TeleportCoroutine(other));
-            }
-            else
-            {
+            } else {
                 waitingTime += Time.deltaTime;
             }
         }
     }
 
-    void TriggerExit2D(Collider2D other)
-    {
+    void TriggerExit2D(Collider2D other) {
         waitingTime = 0f;
     }
 

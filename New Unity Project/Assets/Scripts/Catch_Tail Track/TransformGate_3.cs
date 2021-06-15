@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TransformGate_3 : MonoBehaviour
-{
+public class TransformGate_3 : MonoBehaviour {
     [SerializeField] float teleportCountDown = 5f;
 
     [SerializeField] TransformGate_1 destination;
@@ -11,22 +9,19 @@ public class TransformGate_3 : MonoBehaviour
     float teleporTimer;
     public bool canCheckAnother { set; get; }
 
-    IEnumerator TeleportCoroutine(Transform transform)
-    {
+    IEnumerator TeleportCoroutine(Transform transform) {
         int random = (int)Random.Range(0, 2);
         Vector3 vector = new Vector3(0, 0, 0);
-        switch (random)
-        {
-            case 0: vector = new Vector3(destination.transform.position.x, destination.transform.position.y, transform.position.z);break;
-            case 1: vector = new Vector3(startGate.transform.position.x, startGate.transform.position.y, transform.position.z);break;
+        switch (random) {
+            case 0: vector = new Vector3(destination.transform.position.x, destination.transform.position.y, transform.position.z); break;
+            case 1: vector = new Vector3(startGate.transform.position.x, startGate.transform.position.y, transform.position.z); break;
         }
         //Vector3 vector = new Vector3(destination.transform.position.x, destination.transform.position.y, transform.position.z);
         transform.position = vector;
         yield return null;
     }
 
-    void OnEnable()
-    {
+    void OnEnable() {
         GameObject obj = GameObject.Find("Particle System_1");
         obj.TryGetComponent<TransformGate_1>(out TransformGate_1 gate_1);
         destination = gate_1;
@@ -38,12 +33,9 @@ public class TransformGate_3 : MonoBehaviour
         canCheckAnother = true;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (canCheckAnother)
-        {
-            if (destination.canCheckAnother)
-            {
+    void OnTriggerEnter2D(Collider2D other) {
+        if (canCheckAnother) {
+            if (destination.canCheckAnother) {
                 teleporTimer = 0f;
 
             }
@@ -51,27 +43,22 @@ public class TransformGate_3 : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (canCheckAnother)
-        {
+    void OnTriggerStay2D(Collider2D other) {
+        if (canCheckAnother) {
             if (teleporTimer >= teleportCountDown) //如果倒计时结束
             {
                 StartCoroutine(TeleportCoroutine(other.transform));
                 //canCheckAnother = false;
                 teleporTimer = 0f;
                 startGate.canCheckAnother = true;
-            }
-            else
-            {
+            } else {
                 teleporTimer += Time.deltaTime;
 
             }
         }
     }
 
-    void TriggerExit2D(Collider2D other)
-    {
+    void TriggerExit2D(Collider2D other) {
         teleporTimer = 0f;
 
         startGate.canCheckAnother = true;

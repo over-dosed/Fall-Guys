@@ -221,6 +221,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   input: {fileID: 11400000, guid: 3f50c66b7262fd64c9f20ac7ec76d66d, type: 2}
+  a: 0
+  b: {x: 0, y: 0}
   moveSpeed: 10
   accelerationTime: 5
   decelertationTime: 6

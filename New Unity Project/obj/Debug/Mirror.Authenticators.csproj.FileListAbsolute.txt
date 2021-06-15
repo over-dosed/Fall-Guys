@@ -1,0 +1,2 @@
+F:\Testttt\Fall-Guys\New Unity Project\obj\Debug\Mirror.Authenticators.csproj.AssemblyReference.cache
+F:\Testttt\Fall-Guys\New Unity Project\obj\Debug\Mirror.Authenticators.csproj.CoreCompileInputs.cache
