@@ -130,7 +130,7 @@ public class Player : NetworkBehaviour
         //print("b" + transform.position + ",c=" + colliderOffset + ",d=" + onGround2.distance);
                     b = onGround2.point;
             a=onGround2.distance;
-        if (onGround2.distance <= 0.3)
+        if (onGround2.distance <= 0.1)
         {
 
             grounded = true;
